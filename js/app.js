@@ -23,12 +23,19 @@ const displayCountry = (countries) => {
    })
 }
 // country details print
-const countryDetailsPrintId = document.getElementById("country-details");
 const loadCountryDetails = (code) => {
    const url = `https://restcountries.com/v3.1/alpha/${code}`
    fetch(url)
       .then(res => res.json())
-      .then(data => console.log(data[0]))
+      .then(data => countryDetailsPrint(data[0]))
 }
-
+const countryDetailsPrint = (countryDetails) => {
+   const countryDetailsContainer = document.getElementById("country-details");
+   const detailsElementDiv = document.createElement('div');
+   detailsElementDiv.innerHTML = `
+      <img src="${countryDetails.flags.png}"/>
+      <h3>Name: ${countryDetails.name.common}</h3>
+`
+   countryDetailsContainer.appendChild(detailsElementDiv)
+}
 loadApi()
