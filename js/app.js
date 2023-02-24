@@ -12,11 +12,14 @@ const displayCountry = (countries) => {
       const displayCountryDiv = document.createElement("div");
       displayCountryDiv.classList.add("country")
       displayCountryDiv.innerHTML = `
-      <img src="${country.flags.png}"/>
+      <div class="country-flags">
+         <img src="${country.flags.png}"/>
+      </div>
       <h3>Name: ${country.name.common}</h3>
+      <button>Details</button>
       `
       allCountry.appendChild(displayCountryDiv)
-      console.log(country.name.common)
+      console.log(country)
    })
 }
 loadApi()
