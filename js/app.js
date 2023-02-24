@@ -19,7 +19,7 @@ const displayCountry = (countries) => {
       <button onclick="loadCountryDetails('${country.cca2}')">Details</button>
       `
       allCountry.appendChild(displayCountryDiv)
-      // console.log(country)
+      // console.log(country.currencies.na)
    })
 }
 // country details print
@@ -31,11 +31,16 @@ const loadCountryDetails = (code) => {
 }
 const countryDetailsPrint = (countryDetails) => {
    const countryDetailsContainer = document.getElementById("country-details");
-   const detailsElementDiv = document.createElement('div');
-   detailsElementDiv.innerHTML = `
-      <img src="${countryDetails.flags.png}"/>
-      <h3>Name: ${countryDetails.name.common}</h3>
-`
-   countryDetailsContainer.appendChild(detailsElementDiv)
+   countryDetailsContainer.innerHTML = `
+         <img src="${countryDetails.flags.png}"/>
+         <h3>Name: ${countryDetails.name.common}</h3>
+         <h3>Capital: ${countryDetails.capital[0]}</h3>
+         <h3>Languages: ${countryDetails.languages.fra}</h3>
+         <h3>population: ${countryDetails.population}</h3>
+         <h3>Area: ${countryDetails.area}</h3>
+         <h3>Start Of Week: ${countryDetails.startOfWeek}</h3>
+         <h3>Timezones: ${countryDetails.timezones}</h3>
+   `
+   // console.log(countryDetails.currencies)
 }
 loadApi()

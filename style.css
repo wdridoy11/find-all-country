@@ -14,6 +14,29 @@ img {
    max-width: 100%;
 }
 
+/*========================= display country details css =========================*/
+
+.country-details {
+   width: 500px;
+   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+   padding: 20px;
+   border-radius: 20px;
+   display: block;
+   margin: 50px auto;
+}
+
+.country-details>img {
+   display: block;
+   margin: 0 auto;
+}
+
+.country-details>h3,
+.country>h3 {
+   font-size: 18px;
+   font-weight: 500;
+   padding: 10px 20px;
+}
+
 /*========================= country section design css =========================*/
 .container {
    max-width: 1240px;
